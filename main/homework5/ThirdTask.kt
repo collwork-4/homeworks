@@ -4,8 +4,12 @@ fun main() {
     print("Введите строку: ")
     val input = readlnOrNull()
 
-    validateString(input)
-    println("Строка не содержит ошибок.")
+    try {
+        validateString(input)
+        println("Строка не содержит ошибок.")
+    } catch (e: Exception) {
+        println("Ошибка: ${e.message}")
+    }
 }
 
 fun validateString(str: String?) {
