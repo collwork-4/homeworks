@@ -10,8 +10,12 @@ public class ThirdTask {
         System.out.println("Введите строку: ");
         String input = sc.nextLine();
 
-        validateString(input);
-        System.out.println("Строка не содержит ошибок.");
+        try {
+            validateString(input);
+            System.out.println("Строка не содержит ошибок.");
+        } catch (Exception e) {
+            System.out.println("Ошибка: " + e.getMessage());
+        }
     }
 
     public static void validateString(String str) {
